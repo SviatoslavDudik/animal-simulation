@@ -1,4 +1,9 @@
+package controller;
 import java.awt.Color;
+
+import model.Animal;
+import model.EspeceAnimal;
+import model.Position;
 
 public abstract class AnimalAbstractFactory {
 	
@@ -27,7 +32,7 @@ public abstract class AnimalAbstractFactory {
 			return null;
 	}
 	
-	public abstract Animal getCreatue(Case c);
+	public abstract Animal getAnimal(Position c);
 
 	public Color getCouleur() {
 		return couleur;

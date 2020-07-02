@@ -1,3 +1,4 @@
+package view;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -9,13 +10,18 @@ public class AffichageRectangle implements AffichageStrategy {
 		int y = c.getY();
 		int l = c.getLargeur();
 		int h = c.getHauteur();
-		Animal a = c.getAnimal();
-		if (a != null) {
-			g.setColor(a.getCouleur());
+		Color col = c.getCouleur();
+		if (col != null) {
+			g.setColor(col);
 			g.fillRect(x, y, l, h);
 		}
 		g.setColor(Color.BLACK);
 		g.drawRect(x, y, l, h);
+	}
+
+	@Override
+	public TypeAffichage getType() {
+		return TypeAffichage.RECTANGLE;
 	}
 
 }

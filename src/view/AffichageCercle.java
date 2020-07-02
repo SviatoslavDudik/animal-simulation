@@ -1,3 +1,4 @@
+package view;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -9,12 +10,18 @@ public class AffichageCercle implements AffichageStrategy {
 		int y = c.getY();
 		int l = c.getLargeur();
 		int h = c.getHauteur();
-		Animal a = c.getAnimal();
-		if (a != null)
-		g.setColor(a.getCouleur());
-		g.fillOval(x, y, l, h);
+		Color col = c.getCouleur();
+		if (col != null) {
+			g.setColor(col);
+			g.fillOval(x, y, l, h);
+		}
 		g.setColor(Color.BLACK);
 		g.drawOval(x, y, l, h);
+	}
+
+	@Override
+	public TypeAffichage getType() {
+		return TypeAffichage.CERCLE;
 	}
 
 }

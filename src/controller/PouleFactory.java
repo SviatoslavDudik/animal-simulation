@@ -1,4 +1,9 @@
+package controller;
 import java.awt.Color;
+
+import model.Animal;
+import model.Position;
+import model.Poule;
 
 public class PouleFactory extends AnimalAbstractFactory {
 	
@@ -15,7 +20,7 @@ public class PouleFactory extends AnimalAbstractFactory {
 	}
 
 	@Override
-	public Animal getCreatue(Case c) {
+	public Animal getAnimal(Position c) {
 		Color col = getCouleur();
 		double pdet = getPdetection();
 		double prep = getPreproduction();

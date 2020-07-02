@@ -1,20 +1,21 @@
 import javax.swing.JFrame;
 
+import controller.Simulation;
+import model.Grille;
+import view.AffichageRectangle;
+import view.AffichageStrategy;
+import view.ChampGraphique;
+import view.GrilleView;
+
 import java.awt.Color;
 import java.util.Random;
 
 public class Main {
 
 	public static void main(String[] args) {
-		int posx, posy;
-		Grille grille = new Grille(30, 40, 10, 10, 300, 400);
-		//On crée un objet ChampGraphique de 50 cases de large, et 60 de haut
-		ChampGraphique grid = new ChampGraphique(320, 420);
-		grid.setFrame(10, 10, 300, 400);
-		AffichageStrategy s = new AffichageRectangle();
-		grid.setAffichage(s);
-		grid.setCases(grille);
-		
+		Simulation sim = new Simulation(4, 4);
+		sim.lancer();
+		/*
 		Random r = new Random();
 		
 		int i;
@@ -33,6 +34,7 @@ public class Main {
 	            e.printStackTrace();
 	        }
 		}
+		*/
 	}
 	
 	
