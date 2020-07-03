@@ -1,9 +1,15 @@
 package model;
 import java.util.Iterator;
 import java.util.Random;
-
 import controller.AccesPosition2D;
 
+/**
+ * Grille rectangulaire composée des positions.
+ * Chaque position a 8 voisins autour de lui.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
+ */
 public class Grille implements AccesPosition2D<Animal> {
 	
 	private Position[][] positions;
@@ -11,6 +17,12 @@ public class Grille implements AccesPosition2D<Animal> {
 	private int nbLibres;
 	private Random r;
 	
+	/**
+	 * Constructeur.
+	 *
+	 * @param largeur largeur en nombre de cases
+	 * @param hauteur hauteur en nombre de cases
+	 */
 	public Grille(int largeur, int hauteur) {
 		this.largeur = largeur;
 		this.hauteur = hauteur;
@@ -26,6 +38,10 @@ public class Grille implements AccesPosition2D<Animal> {
 		initialiserVoisins();
 	}
 	
+	/**
+	 * Initialisation des voisins.
+	 * Ajoute à chaque position la liste de ses voisins.
+	 */
 	private void initialiserVoisins() {
 		int i, j;
 		Position p;
@@ -52,6 +68,7 @@ public class Grille implements AccesPosition2D<Animal> {
 		}
 	}
 	
+	@Override
 	public int getId(int i, int j) {
 		return i*largeur+j;
 	}
@@ -121,6 +138,13 @@ public class Grille implements AccesPosition2D<Animal> {
 
 	}
 	
+	/**
+	 * Itérateur permettant de  parcourir les positions de gauche à droite, puis
+	 * de haut en bas.
+	 *
+	 * @author Ali Aboutarik
+	 * @author Sviatoslav Dudik
+	 */
 	public class GrilleIterator implements Iterator<Position> {
 		
 		private int i, j;

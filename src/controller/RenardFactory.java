@@ -7,7 +7,10 @@ import model.Position;
 import model.Renard;
 
 /**
- * Classe permettant de construire un animal de classe {@link Renard}
+ * Usine permettant de construire un animal de classe {@link Renard}
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class RenardFactory extends AnimalAbstractFactory {
 

@@ -28,6 +28,9 @@ import view.SimulationView;
  * Contrôleur de la simulation.
  * Cette classe sert à initialiser et à exécuter la simulation.
  * Elle contient également la méthode main.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class Simulation implements Runnable {
 

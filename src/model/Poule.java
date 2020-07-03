@@ -2,7 +2,10 @@ package model;
 import java.awt.Color;
 
 /**
- * Classe représentant une poule.
+ * Représentation d'une poule.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class Poule extends Animal {
 
@@ -20,8 +23,8 @@ public class Poule extends Animal {
 	 * @param ea endurance alimentaire (en jours)
 	 * @param ev espérance de vie (en jours)
 	 */
-	public Poule(Position c, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
-		super(c,col,pdet,prep,batk,a,d,vd,ea,ev);
+	public Poule(Position p, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
+		super(p,col,pdet,prep,batk,a,d,vd,ea,ev);
 	}
 
 	@Override

@@ -4,12 +4,28 @@ import java.awt.Color;
 import java.util.Iterator;
 import controller.Acces2D;
 
+/**
+ * Grille rectangulaire de cases.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
+ */
 public class GrilleView implements Acces2D<Case,Color> {
+
 	private Case[][] cases;
 	private int largeur, hauteur;
 	private int largeurView, hauteurView;
 
-	
+	/**
+	 * Constructeur.
+	 *
+	 * @param largeur largeur de la grille en nombre de cases
+	 * @param hauteur hauteur de la grille en nombre de cases
+	 * @param x abscisse du coin haut gauche de la grille
+	 * @param y ordonnée du coin haut gauche de la grille
+	 * @param largeurCase largeur d'une case en pixels
+	 * @param hauteurCase hauteur d'une case en pixels
+	 */
 	public GrilleView(int largeur, int hauteur, int x, int y, int largeurCase, int hauteurCase) {
 		cases = new Case[hauteur][largeur];
 		this.largeur = largeur;
@@ -26,10 +42,20 @@ public class GrilleView implements Acces2D<Case,Color> {
 		}
 	}
 
+	/**
+	 * Accesseur.
+	 *
+	 * @return largeur de la grille en pixels
+	 */
 	public int getLargeurView() {
 		return largeurView;
 	}
 
+	/**
+	 * Accesseur.
+	 *
+	 * @return hauteur de la grille en pixels
+	 */
 	public int getHauteurView() {
 		return hauteurView;
 	}
@@ -60,6 +86,13 @@ public class GrilleView implements Acces2D<Case,Color> {
 
 	}
 	
+	/**
+	 * Iterateur permettant de parcourir les cases de gauche à droite, puis du
+	 * haut en bas.
+	 *
+	 * @author Ali Aboutarik
+	 * @author Sviatoslav Dudik
+	 */
 	public class GrilleViewIterator implements Iterator<Case> {
 		
 		private int i, j;

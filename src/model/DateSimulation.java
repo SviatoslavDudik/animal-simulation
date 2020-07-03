@@ -1,9 +1,12 @@
 package model;
 
 /**
- * Représente une date dans une simulation.
+ * Représentation d'une date pour une simulation.
  * Une date est composée de la saison et du jour dans cette saison.
  * Il y a 4 saisons au total et chaque saison compte 30 jours.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class DateSimulation {
 	

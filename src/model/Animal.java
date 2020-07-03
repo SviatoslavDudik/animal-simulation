@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Classe représentant un animal.
+ * Représentation d'un animal.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public abstract class Animal {
 	
