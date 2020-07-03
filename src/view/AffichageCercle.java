@@ -2,6 +2,12 @@ package view;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Strategie d'affichage qui affiche les cases comme des cercles.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
+ */
 public class AffichageCercle implements AffichageStrategy {
 
 	@Override

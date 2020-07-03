@@ -2,7 +2,10 @@ package model;
 import java.awt.Color;
 
 /**
- * Classe représentant une vipère.
+ * Représentation d'une vipère.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class Vipere extends Animal {
 
@@ -20,8 +23,8 @@ public class Vipere extends Animal {
 	 * @param ea endurance alimentaire (en jours)
 	 * @param ev espérance de vie (en jours)
 	 */
-	public Vipere(Position c, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
-		super(c, col, pdet, prep, batk, a, d, vd, ea, ev);
+	public Vipere(Position p, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
+		super(p, col, pdet, prep, batk, a, d, vd, ea, ev);
 	}
 
 	@Override

@@ -7,7 +7,10 @@ import model.Position;
 import model.Vipere;
 
 /**
- * Classe permettant de construire un animal de classe {@link Vipere}
+ * Usine permettant de construire un animal de classe {@link Vipere}
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class VipereFactory extends AnimalAbstractFactory {
 

@@ -8,6 +8,8 @@ package controller;
  *
  * @param <T> type d'éléments de la collection
  * @param <V> type d'information stockée dans la collection
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public interface Acces2D<T,V> extends Iterable<T> {
 	

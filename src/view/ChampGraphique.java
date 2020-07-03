@@ -1,15 +1,17 @@
 package view;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
 //Merci à StackOverflow pour sa précieuse contribution !
 
-
+/**
+ * Élément graphique occupant toute la fenêtre.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
+ */
 public class ChampGraphique extends JPanel {
 
 	private int largeur, hauteur;
@@ -18,8 +20,9 @@ public class ChampGraphique extends JPanel {
 
 	/**
 	 * Constructeur.
-	 * @param largeur La largeur (en nombre de cases) de la grille affichée.
-	 * @param hauteur La hauteur (en nombre de cases) de la grille affichée.
+	 * 
+	 * @param largeur largeur (en pixels) de la fenêtre
+	 * @param hauteur hauteur (en pixels) de la fenêtre
 	 */
 	public ChampGraphique(int largeur, int hauteur) {
 		this.largeur = largeur;
@@ -41,26 +44,46 @@ public class ChampGraphique extends JPanel {
 		window.add(this);
 	}
 	
+	/**
+	 * Affiche la fenêtre.
+	 * La méthode doit être appeler après l'ajout de tous les éléments.
+	 */
 	public void showWindow() {
 		window.pack();
 		window.setVisible(true);
 	}
 	
+	/**
+	 * Ajoute un élément en haut.
+	 *
+	 * @param c élément à ajouter
+	 */
 	public void addTop(Component c) {
 		top.add(c);
 	}
 
+	/**
+	 * Ajoute un élément au centre.
+	 *
+	 * @param c élément à ajouter
+	 */
 	public void addCenter(Component c) {
 		center.add(c);
 	}
 
+	/**
+	 * Ajoute un élément en bas.
+	 *
+	 * @param c élément à ajouter
+	 */
 	public void addBottom(Component c) {
 		bottom.add(c);
 	}
 
 	/**
 	 * Accesseur.
-	 * @return Renvoie la largeur de la grille
+	 *
+	 * @return largeur de la fenêtre
 	 */
 	public int getLargeur() {
 		return largeur;
@@ -68,7 +91,8 @@ public class ChampGraphique extends JPanel {
 	
 	/**
 	 * Accesseur.
-	 * @return Renvoie la hauteur de la grille
+	 *
+	 * @return hauteur de la fenêtre
 	 */
 	public int getHauteur() {
 		return hauteur;

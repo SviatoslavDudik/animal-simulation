@@ -2,6 +2,12 @@ package view;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Strategie d'affichage qui affiche les cases comme des rectangles.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
+ */
 public class AffichageRectangle implements AffichageStrategy {
 
 	@Override

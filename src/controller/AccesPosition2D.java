@@ -9,6 +9,8 @@ import model.PositionLibreInexistanteException;
  * Positions {@link Position}
  *
  * @param <V> type d'information stockée dans une position
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public interface AccesPosition2D<V> extends Acces2D<Position, V> {
 	
@@ -29,6 +31,17 @@ public interface AccesPosition2D<V> extends Acces2D<Position, V> {
 	 */
 	public void libererPosition(int i, int j);
 	
+	/**
+	 * Calcule l'identificateur en fonction des coordonnées.
+	 * Cet identificateur peut être utilisé pour retrouver les coordonnées.
+	 *
+	 * @param i première composante des coordonnées
+	 * @param j deuxième composante des coordonnées
+	 * @return identificateur
+	 * @see getCoordinates
+	 */
+	public int getId(int i, int j);
+
 	/**
 	 * Renvoie les coordonnées à partir d'un identificateur.
 	 *

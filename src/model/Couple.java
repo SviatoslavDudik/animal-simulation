@@ -1,7 +1,10 @@
 package model;
 
 /**
- * Class pour créer une couple de deux éléments.
+ * Couple de deux éléments.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class Couple<T,V> {
 	/**

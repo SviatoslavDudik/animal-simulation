@@ -9,6 +9,9 @@ import model.Position;
  * Usine abstraite des animaux.
  * Créer les animaux avec la fonction {@link AnimalAbstractFactory#getAnimal}.
  * Permet de configurer l'animal avant sa création.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public abstract class AnimalAbstractFactory {
 	

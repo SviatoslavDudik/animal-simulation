@@ -1,9 +1,12 @@
 package model;
 
 /**
- * Classe représentant un nombre ayant une valeur max.
+ * Représentation d'un nombre ayant une valeur max.
  * Ce nombre peut être relié à un autre nombre. Dans ce cas ci, si ce nombre est
  * remis à zéro, alors il incrémente le nombre auquel il est relié.
+ *
+ * @author Ali Aboutarik
+ * @author Sviatoslav Dudik
  */
 public class Nombre {
 	
