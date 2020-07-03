@@ -2,11 +2,19 @@ package controller;
 import java.awt.Color;
 
 import model.Animal;
+import model.EspeceAnimal;
 import model.Position;
 import model.Poule;
 
+/**
+ * Classe permettant de construire un animal de classe {@link Poule}
+ */
 public class PouleFactory extends AnimalAbstractFactory {
 	
+	/**
+	 * Constructeur.
+	 * Construit une usine avec les paramètres par défaut
+	 */
 	public PouleFactory() {
 		setCouleur(Color.YELLOW);
 		setPdetection(0.10);
@@ -30,8 +38,9 @@ public class PouleFactory extends AnimalAbstractFactory {
 		int vd = getVitesseDeplacement();
 		int ea = getEnduranceAlimentaire();
 		int ev = getEsperanceVie();
-
-		return new Poule(c, col, pdet, prep, ba, a, d, vd, ea, ev);
+		Poule p =  new Poule(c, col, pdet, prep, ba, a, d, vd, ea, ev);
+		p.addProie(EspeceAnimal.VIPERE);
+		return p;
 	}
 
 }

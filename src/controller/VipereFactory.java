@@ -2,11 +2,19 @@ package controller;
 import java.awt.Color;
 
 import model.Animal;
+import model.EspeceAnimal;
 import model.Position;
 import model.Vipere;
 
+/**
+ * Classe permettant de construire un animal de classe {@link Vipere}
+ */
 public class VipereFactory extends AnimalAbstractFactory {
-	
+
+	/**
+	 * Constructeur.
+	 * Construit une usine avec les paramètres par défaut
+	 */
 	public VipereFactory() {
 		setCouleur(Color.GREEN);
 		setPdetection(0.50);
@@ -30,8 +38,10 @@ public class VipereFactory extends AnimalAbstractFactory {
 		int vd = getVitesseDeplacement();
 		int ea = getEnduranceAlimentaire();
 		int ev = getEsperanceVie();
-
-		return new Vipere(c, col, pdet, prep, ba, a, d, vd, ea, ev);
+		Vipere v = new Vipere(c, col, pdet, prep, ba, a, d, vd, ea, ev);
+		v.addProie(EspeceAnimal.RENARD);
+		return v;
+		
 	}
 
 }

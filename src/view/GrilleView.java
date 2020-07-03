@@ -56,15 +56,15 @@ public class GrilleView implements Acces2D<Case,Color> {
 
 	@Override
 	public Iterator<Case> iterator() {
-		return new GrilleIterator();
+		return new GrilleViewIterator();
 
 	}
 	
-	public class GrilleIterator implements Iterator<Case> {
+	public class GrilleViewIterator implements Iterator<Case> {
 		
 		private int i, j;
 		
-		public GrilleIterator() {
+		public GrilleViewIterator() {
 			i = 0;
 			j = 0;
 		}

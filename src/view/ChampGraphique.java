@@ -1,11 +1,8 @@
 package view;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.GridBagLayout;
+import java.awt.event.KeyListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 

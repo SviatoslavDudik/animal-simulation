@@ -1,11 +1,17 @@
 package model;
 import java.awt.Color;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
+/**
+ * Classe représentant un animal.
+ */
 public abstract class Animal {
 	
 	protected Position pos;
 	protected Color couleur;
+	protected List<EspeceAnimal> proies;
 	protected double pdetection;
 	protected double preproduction;
 	protected int bonusAtk;
@@ -20,9 +26,26 @@ public abstract class Animal {
 	protected boolean estMange;
 	protected static Random r = new Random();
 	
-	public Animal(Position c, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
-		pos = c;
+	/**
+	 * Constructeur.
+	 *
+	 * @param p position
+	 * @param col couleur
+	 * @param pdet probabilité de détection
+	 * @param prep probabilité de reproduction
+	 * @param batk bonus d'attaque
+	 * @param a capacité d'attaque
+	 * @param d capacité de défense
+	 * @param vd vitesse de déplacement
+	 * @param ea endurance alimentaire (en jours)
+	 * @param ev espérance de vie (en jours)
+	 */
+	public Animal(Position p, Color col, double pdet, double prep, int batk, int a, int d, int vd, int ea, int ev) {
+		if (p.estLibre() == false)
+			throw new IllegalArgumentException();
+		pos = p;
 		couleur = col;
+		proies = new LinkedList<EspeceAnimal>();
 		pdetection = pdet;
 		preproduction = prep;
 		bonusAtk = batk;
@@ -37,6 +60,12 @@ public abstract class Animal {
 		estMange = false;
 	}
 	
+	/**
+	 * Détecter une proie.
+	 *
+	 * @param a proie
+	 * @return true si l'animal a réussi de détecter la proie, false sinon
+	 */
 	public boolean detecterProie(Animal a) {
 		double v = r.nextDouble();
 		if (v <= pdetection) 
@@ -45,6 +74,12 @@ public abstract class Animal {
 			return false;
 	}
 	
+	/**
+	 * Attaquer une proie
+	 *
+	 * @param a proie
+	 * @return true si l'animal a réussi d'attaquer, false s'il a échoué
+	 */
 	public boolean attaquer(Animal a) {
 		if (a.estMort())
 			return true;
@@ -57,18 +92,33 @@ public abstract class Animal {
 		}
 	}
 
+	/**
+	 * Manger un animal.
+	 * Remet à zéro le nombre de jours sans nourriture et marque l'animal comme
+	 * étant mangé.
+	 * @param a animal à manger
+	 */
 	public void manger(Animal a) {
 		faim = 0;
 		a.mort = 1;
 		a.estMange = true;
 	}
 	
+	/**
+	 * Fuir d'un autre animal.
+	 * L'animal se déplace à une position voisine aléatoire (s'il y en a une).
+	 */
 	public void fuir() {
 		try {
 			allerPositionVoisine();
 		} catch (PositionLibreInexistanteException e) {}
 	}
 
+	/**
+	 * Se déplacer en fonction de sa vitesse de déplacement.
+	 * L'animal se déplace {@link vitesseDeplacement} fois à une position
+	 * voisine aléatoire (s'il y en a une).
+	 */
 	public void seDeplacer() {
 		try {
 			for (int i = 0; i<vitesseDeplacement; i++)
@@ -76,6 +126,10 @@ public abstract class Animal {
 		} catch (PositionLibreInexistanteException e) {}
 	}
 	
+	/**
+	 * Essayer de se reproduire.
+	 * @return true si la reproduction réussi, false sinon
+	 */
 	public boolean seReproduire() {
 		if (r.nextDouble() <= preproduction)
 			return true;
@@ -83,44 +137,114 @@ public abstract class Animal {
 			return false;
 	}
 
+	/**
+	 * Vérifie si l'animal est mort.
+	 *
+	 * @return true si l'animal est mort, false sinon.
+	 */
 	public boolean estMort() {
 		return mort>0;
 	}
 	
+	/**
+	 * Indique le nombre de jour depuis la mort.
+	 *
+	 * @return le nombre de jour depuis la mort, ou 0 si l'animal est vivant
+	 */
 	public int joursDepuisMort() {
 		return mort;
 	}
 	
+	/**
+	 * Vérifie si l'animal a été mangé par un autre animal.
+	 *
+	 * @return true si un autre animal l'a mangé, false sinon.
+	 */
 	public boolean estMange() {
 		return estMange;
 	}
 	
+	/**
+	 * Accesseur.
+	 *
+	 * @return position de l'animal
+	 */
 	public Position getPos() {
 		return pos;
 	}
 
+	/**
+	 * Accesseur.
+	 * @param pos nouvelle position de l'animal
+	 */
 	public void setPos(Position pos) {
 		this.pos = pos;
 	}
 
+	/**
+	 * Accesseur.
+	 *
+	 * @return couleur
+	 */
 	public Color getCouleur() {
 		return couleur;
 	}
 	
+	/**
+	 * Accesseur.
+	 *
+	 * @return espèce de l'animal
+	 */
 	public abstract EspeceAnimal getEspece();
+	
+	/**
+	 * Vérifie si l'animal peut manger une proie.
+	 *
+	 * @param a proie
+	 * @return true s'il peut la manger, false sinon
+	 */
+	public boolean peutManger(Animal a) {
+		return proies.contains(a.getEspece());
+	}
+	
+	/**
+	 * Ajoute un espèce à la liste de proies.
+	 *
+	 * @param espece espèce à ajouter
+	 */
+	public void addProie(EspeceAnimal espece) {
+		proies.add(espece);
+	}
 
+	/**
+	 * Incrémente le nombre de jours sans nourriture.
+	 * Si ce nombre dépasse l'endurance alimentaire, alors marque l'animal comme
+	 * mort.
+	 */
 	public void incrementerFaim() {
 		faim++;
 		if (!estMort() && faim>=enduranceAlimentaire)
 			mort++;
 	}
 	
+	/**
+	 * Incrémente l'age.
+	 * Si son age dépasse l'espérance de vie, alors marque l'animal comme mort.
+	 * Si l'animal est déjà mort, alors incrémente le nombre de jours depuis la
+	 * mort.
+	 */
 	public void incrementerAge() {
 		age++;
 		if (estMort() || age>=esperanceVie)
 			mort++;
 	}
 	
+	/**
+	 * Déplace animal à une position voisine (s'il en existe une).
+	 *
+	 * @throws PositionLibreInexistanteException s'il n'y a pas de position
+	 * voisine libre
+	 */
 	private void allerPositionVoisine() throws PositionLibreInexistanteException {
 		Position p = getPos();
 		Position newP = p.getPositionLibreAleatoire();
