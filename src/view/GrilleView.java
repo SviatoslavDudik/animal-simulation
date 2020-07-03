@@ -12,9 +12,16 @@ import controller.Acces2D;
  */
 public class GrilleView implements Acces2D<Case,Color> {
 
+	/** Tableau de cases de la grille. */
 	private Case[][] cases;
-	private int largeur, hauteur;
-	private int largeurView, hauteurView;
+	/** Largeur de la grille en nombre de cases. */
+	private int largeur;
+	/** Hauteur de la grille en nombre de cases. */
+	private int hauteur;
+	/** Largeur de la grille en pixels. */
+	private int largeurView;
+	/** Hauteur de la grille en pixels. */
+	private int hauteurView;
 
 	/**
 	 * Constructeur.
@@ -95,7 +102,10 @@ public class GrilleView implements Acces2D<Case,Color> {
 	 */
 	public class GrilleViewIterator implements Iterator<Case> {
 		
-		private int i, j;
+		/** Première composante du parcours. */
+		private int i;
+		/** Deuxième composante du parcours. */
+		private int j;
 		
 		public GrilleViewIterator() {
 			i = 0;

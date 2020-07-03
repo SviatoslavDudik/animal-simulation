@@ -13,7 +13,9 @@ import controller.Acces2D;
  */
 public class SimulationView extends JPanel {
 	
+	/** Collection des cases à afficher. */
 	public Acces2D<Case,Color> cases;
+	/** Stratégie d'affichage à utiliser. */
 	public AffichageStrategy strategy;
 	
 	/**

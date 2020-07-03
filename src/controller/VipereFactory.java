@@ -7,7 +7,7 @@ import model.Position;
 import model.Vipere;
 
 /**
- * Usine permettant de construire un animal de classe {@link Vipere}
+ * Usine permettant de construire un animal de classe {@link Vipere}.
  *
  * @author Ali Aboutarik
  * @author Sviatoslav Dudik

@@ -7,7 +7,7 @@ import model.Position;
 import model.Renard;
 
 /**
- * Usine permettant de construire un animal de classe {@link Renard}
+ * Usine permettant de construire un animal de classe {@link Renard}.
  *
  * @author Ali Aboutarik
  * @author Sviatoslav Dudik

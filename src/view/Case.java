@@ -10,8 +10,15 @@ import java.awt.Color;
  */
 public class Case {
 	
-	private int x, y;
-	private int largeur, hauteur;
+	/** Abscisse du coin haut gauche de la case. */
+	private int x;
+	/** Ordonnée du coin haut gauche de la case. */
+	private int y;
+	/** Largeur de la case en pixels. */
+	private int largeur;
+	/** Hauteur de la case en pixels. */
+	private int hauteur;
+	/** Couleur de la case. */
 	private Color couleur;
 
 	/**

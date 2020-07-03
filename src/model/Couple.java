@@ -7,13 +7,9 @@ package model;
  * @author Sviatoslav Dudik
  */
 public class Couple<T,V> {
-	/**
-	 * Premier élément.
-	 */
+	/** Premier élément. */
 	public T a;
-	/**
-	 * Deuxième élément.
-	 */
+	/** Deuxième élément. */
 	public V b;
 	
 	/**

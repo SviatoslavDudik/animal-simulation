@@ -7,7 +7,7 @@ import model.Position;
 import model.Poule;
 
 /**
- * Usine permettant de construire un animal de classe {@link Poule}
+ * Usine permettant de construire un animal de classe {@link Poule}.
  *
  * @author Ali Aboutarik
  * @author Sviatoslav Dudik

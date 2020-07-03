@@ -15,18 +15,30 @@ import model.Position;
  */
 public abstract class AnimalAbstractFactory {
 	
+	/** Usine de renards. */
 	private static final RenardFactory RENARD_FACTORY = new RenardFactory();
+	/** Usine de poules. */
 	private static final PouleFactory POULE_FACTORY = new PouleFactory();
+	/** Usine de vipères. */
 	private static final VipereFactory VIPERE_FACTORY = new VipereFactory();
 
+	/** Couleur choisie */
 	private Color couleur;
+	/** Probabilité de détection choisie */
 	private double pdetection;
+	/** Probabilité de reproduction choisie */
 	private double preproduction;
+	/** Bonus d'attaque choisi */
 	private int bonusAtk;
+	/** Capacité d'attaque choisie */
 	private int atk;
+	/** Capacité de défense choisie */
 	private int def;
+	/** Endurance alimentaire choisie */
 	private int enduranceAlimentaire;
+	/** Espérance de vie choisie */
 	private int esperanceVie;
+	/** Vitesse de déplacement choisie */
 	private int vitesseDeplacement;
 
 	/**

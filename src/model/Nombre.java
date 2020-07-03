@@ -10,8 +10,11 @@ package model;
  */
 public class Nombre {
 	
+	/** Valeur du nombre. */
 	private int valeur;
+	/** Valeur max du nombre */
 	private int limite;
+	/** Nombre auquel ce nombre est relié. */
 	private Nombre suivant;
 	
 	/**

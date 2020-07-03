@@ -12,21 +12,37 @@ import java.util.Random;
  */
 public abstract class Animal {
 	
+	/** Position de l'animal. */
 	protected Position pos;
+	/** Couleur attribuée à l'animal */
 	protected Color couleur;
+	/** Liste d'espèces que cet animal peut manger */
 	protected List<EspeceAnimal> proies;
+	/** Probabilité de détection d'une proie. */
 	protected double pdetection;
+	/** Probabilité de reproduction. */
 	protected double preproduction;
+	/** Bonus d'attaque. */
 	protected int bonusAtk;
+	/** Capacité d'attaque. */
 	protected int atk;
+	/** Capacité de défense. */
 	protected int def;
+	/** Vitesse de déplacement. */
 	protected int vitesseDeplacement;
+	/** Endurance alimentaire. */
 	protected int enduranceAlimentaire;
+	/** Espérance de vie */
 	protected int esperanceVie;
+	/** Nombre de jours sans nourriture. */
 	protected int faim;
+	/** Age de l'animal (en jours). */
 	protected int age;
+	/** Nombre de jours depuis la mort. */
 	protected int mort;
+	/** Valeur indiquant si l'animal a été mangé. */
 	protected boolean estMange;
+	/** Générateur de nombres aléatoires */
 	protected static Random r = new Random();
 	
 	/**

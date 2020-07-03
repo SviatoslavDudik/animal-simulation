@@ -13,9 +13,13 @@ import java.util.Random;
  */
 public class Position {
 
+	/** Liste de positions voisines. */
 	private List<Position> voisines;
+	/** Animal occupant la position. */
 	private Animal a;
+	/** Identificateur de la position. */
 	private int id;
+	/** Générateur des nombres aléatoires. */
 	private static Random random = new Random();
 	
 	/**

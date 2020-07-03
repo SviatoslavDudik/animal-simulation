@@ -34,39 +34,45 @@ import view.SimulationView;
  */
 public class Simulation implements Runnable {
 
+	/** Collection de positions. */
 	private AccesPosition2D<Animal> positions;
+	/** Date de la simulation. */
 	private DateSimulation date;
-	private int largeur, hauteur;
+	/** Largeur de la grille en nombre de cases. */
+	private int largeur;
+	/** Hauteur de la grille en nombre de cases. */
+	private int hauteur;
+	/** Collections de cases affichables. */
 	private Acces2D<Case, Color> cases;
+	/** Conteneur de tous les élément graphiques. */
 	private ChampGraphique cont;
+	/** Vue de la simulation. */
 	private SimulationView simulationView;
-	private JLabel saison, error;
+	/** Libellé de la saison. */
+	private JLabel saison;
+	/** Libellé destinée aux erreurs. */
+	private JLabel error;
+	/** Bouton de lancement. */
 	private JButton start;
-	private JTextField fieldRenard, fieldPoule, fieldVipere;
+	/** Entrée du texte pour le nombre de renards. */
+	private JTextField fieldRenard;
+	/** Entrée du texte pour le nombre de poules. */
+	private JTextField fieldPoule;
+	/** Entrée du texte pour le nombre de vipères. */
+	private JTextField fieldVipere;
+	/** Valeur indiquant si une simulation est en cours. */
 	private boolean enCours;
-	/**
-	 * Liste de tous les animaux vivants.
-	 */
+	/** Liste de tous les animaux vivants. */
 	private List<Animal> animaux;
-	/**
-	 * Liste des animaux qui doivent être supprimés avant le prochain tour.
-	 */
+	/** Liste des animaux qui doivent être supprimés avant le prochain tour. */
 	private List<Animal> aSupprimer;
-	/**
-	 * Liste d'animaux qui doivent sauter ce tour.
-	 */
+	/** Liste d'animaux qui doivent sauter ce tour. */
 	private List<Animal> tourInterdit;
-	/**
-	 * Liste d'espèces d'animaux qu'il faut créer avant le prochain tour.
-	 */
+	/** Liste d'espèces d'animaux qu'il faut créer avant le prochain tour. */
 	private List<EspeceAnimal> aAjouter;
-	/**
-	 * Thread qui exécute la simulation.
-	 */
+	/** Thread qui exécute la simulation. */
 	private Thread t;
-	/**
-	 * Objet utilisé pour la synchronisation entre les threads
-	 */
+	/** Objet utilisé pour la synchronisation entre les threads */
 	private final Object obj = new Object();
 
 	/**

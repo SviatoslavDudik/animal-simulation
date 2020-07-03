@@ -10,9 +10,13 @@ package model;
  */
 public class DateSimulation {
 	
+	/** Nombre déterminant la saison */
 	private Nombre saison;
+	/** Nombre déterminan le jour */
 	private Nombre jour;
+	/** Nombre de jours par saison */
 	private static int jourParSaison = 30;
+	/** Noms des saisons */
 	private static String[] nomSaison = {"Hiver", "Printemps", "Été", "Automne"};
 	
 	/**

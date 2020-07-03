@@ -12,9 +12,15 @@ import controller.AccesPosition2D;
  */
 public class Grille implements AccesPosition2D<Animal> {
 	
+	/** Tableau de positions de la grille. */
 	private Position[][] positions;
-	private int largeur, hauteur;
+	/** Largeur de la grille en nombre de cases. */
+	private int largeur;
+	/** Hauteur de la grille en nombre de cases. */
+	private int hauteur;
+	/** Nombre de cases libres. */
 	private int nbLibres;
+	/** Générateur de nombres aléatoires. */
 	private Random r;
 	
 	/**
@@ -147,7 +153,10 @@ public class Grille implements AccesPosition2D<Animal> {
 	 */
 	public class GrilleIterator implements Iterator<Position> {
 		
-		private int i, j;
+		/** Première composante du parcours. */
+		private int i;
+		/** Deuxième composante du parcours. */
+		private int j;
 		
 		public GrilleIterator() {
 			i = 0;

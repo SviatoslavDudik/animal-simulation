@@ -14,9 +14,18 @@ import javax.swing.JPanel;
  */
 public class ChampGraphique extends JPanel {
 
-	private int largeur, hauteur;
+	/** Largeur de la fenêtre en pixels. */
+	private int largeur;
+	/** Hauteur de la fenêtre en pixels. */
+	private int hauteur;
+	/** Fenêtre. */
 	private JFrame window;
-	private JPanel top, center, bottom;
+	/** Conteneur en haut de la fenêtre. */
+	private JPanel top;
+	/** Conteneur au centre de la fenêtre. */
+	private JPanel center;
+	/** Conteneur en bas de la fenêtre. */
+	private JPanel bottom;
 
 	/**
 	 * Constructeur.
@@ -38,8 +47,6 @@ public class ChampGraphique extends JPanel {
 		window = new JFrame();
 		window.setSize(largeur, hauteur);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// TODO delete
-		window.setUndecorated(true);
 
 		window.add(this);
 	}
